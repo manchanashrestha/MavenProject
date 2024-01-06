@@ -1,7 +1,7 @@
 package MavenProjectGroup.MavenProject;
 
-import static org.testng.Assert.assertFalse;
-
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 import java.util.List;
 import java.util.Random;
@@ -12,6 +12,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -24,8 +26,7 @@ import org.testng.asserts.SoftAssert;
 import org.testng.annotations.Listeners;
 
 @Listeners(MavenProjectGroup.MavenProject.EventListner.class)
-public class AppTest 
-{
+public class AppTest {
 	WebDriver driver;
 	String homePageTitle;
 	String aboutMe;
@@ -35,18 +36,33 @@ public class AppTest
 	// Initializing all the required variable
 	@Parameters({ "browser" })
 	@BeforeTest
-	public void SetUp(String browser) {
-		if (browser.equalsIgnoreCase("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browser.equalsIgnoreCase("firefox")) {
-			driver = new FirefoxDriver();
-		} else if (browser.equalsIgnoreCase("edge")) {
-			driver = new EdgeDriver();
-		}
+	public void SetUp(String browser) throws MalformedURLException, InterruptedException {
+//		if (browser.equalsIgnoreCase("chrome")) {
+//			driver = new ChromeDriver();
+//		} else if (browser.equalsIgnoreCase("firefox")) {
+//			driver = new FirefoxDriver();
+//		} else if (browser.equalsIgnoreCase("edge")) {
+//			driver = new EdgeDriver();
+//		}
+//		System.out.println("Test is running in " + browser + "browser");
+//		Reporter.log("Test is running in " + browser + "browser");
+//
+//		driver.manage().window().maximize();
+//		driver.get("http://eaapp.somee.com/");
+
+		DesiredCapabilities dc = new DesiredCapabilities();
+		/*
+		 * if (browser.equalsIgnoreCase("chrome")) { dc.setBrowserName("chrome"); } else
+		 * if (browser.equalsIgnoreCase("firefox")) { dc.setBrowserName("firefox"); }
+		 * else if (browser.equalsIgnoreCase("edge")) {
+		 * dc.setBrowserName("MicrosoftEdge"); }
+		 */
+		dc.setBrowserName("firefox");
 		System.out.println("Test is running in " + browser + "browser");
 		Reporter.log("Test is running in " + browser + "browser");
 
-		driver.manage().window().maximize();
+		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), dc);
+		Thread.sleep(100);
 		driver.get("http://eaapp.somee.com/");
 
 		Random random = new Random();
@@ -100,8 +116,8 @@ public class AppTest
 		driver.findElement(By.xpath("/html/body/div[2]/form/div[6]/div/input")).click();
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"logoutForm\"]/ul/li[2]/a")));
 
-		 List<WebElement> IfRegister = driver.findElements(By.xpath("//*[@id=\"logoutForm\"]/ul/li[2]/a"));
-		 Reporter.log("Ifregister ..." + IfRegister.get(0).getText());
+		List<WebElement> IfRegister = driver.findElements(By.xpath("//*[@id=\"logoutForm\"]/ul/li[2]/a"));
+		Reporter.log("Ifregister ..." + IfRegister.get(0).getText());
 
 		// Soft assertion
 		ObjSoftAssert.assertEquals(IfRegister.isEmpty(), false, "Log Off Button is not available!!!");
@@ -192,7 +208,6 @@ public class AppTest
 	// Ending the test
 	@AfterTest
 	public void TearDown() {
-		driver.close();
+		driver.quit();
 	}
 }
-

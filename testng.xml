@@ -6,10 +6,10 @@
 		<classes>
 			<class name="MavenProjectGroup.MavenProject.AppTest">
 				<methods>
-					<parameter name="userNameData" value="eb.c1411" />
+					<parameter name="userNameData" value="Ch.c1411" />
 					<parameter name="passwordData" value="Password1@" />
 					<parameter name="confirmPasswordData" value="Password1@" />
-					<parameter name="emailData" value="eb.c1411@gmail.com" />
+					<parameter name="emailData" value="Ch.c1411@gmail.com" />
 
 					<include name="UserRegistration" />
 					<include name="EappLogin" />
@@ -21,45 +21,45 @@
 			</class>
 		</classes>
 	</test>
-<!--	<test name="FirefoxTest">-->
-<!--		<parameter name="browser" value="firefox" />-->
-<!--		<classes>-->
-<!--			<class name="MavenProjectGroup.MavenProject.AppTest">-->
-<!--				<methods>-->
-<!--					<parameter name="userNameData" value="Ab.c1212" />-->
-<!--					<parameter name="passwordData" value="Password1@" />-->
-<!--					<parameter name="confirmPasswordData" value="Password1@" />-->
-<!--					<parameter name="emailData" value="Ab.c1212@gmail.com" />-->
+	<test name="FirefoxTest">
+		<parameter name="browser" value="firefox" />
+		<classes>
+			<class name="MavenProjectGroup.MavenProject.AppTest">
+				<methods>
+					<parameter name="userNameData" value="Ff.c1212" />
+					<parameter name="passwordData" value="Password1@" />
+					<parameter name="confirmPasswordData" value="Password1@" />
+					<parameter name="emailData" value="Ff.c1212@gmail.com" />
 
-<!--					<include name="UserRegistration" />-->
-<!--					<include name="EappLogin" />-->
-<!--					<exclude name="EappHomePage" />-->
-<!--					<exclude name="EappAboutPage" />-->
-<!--					<include name="EappEmployeeList" />-->
-<!--					<include name="DoTest" />-->
-<!--				</methods>-->
-<!--			</class>-->
-<!--		</classes>-->
-<!--	</test>-->
-<!--	<test name="EdgeTest">-->
-<!--		<parameter name="browser" value="edge" />-->
-<!--		<classes>-->
-<!--			<class name="MavenProjectGroup.MavenProject.AppTest">-->
-<!--				<methods>-->
-<!--					<parameter name="userNameData" value="Ab.c1313" />-->
-<!--					<parameter name="passwordData" value="Password1@" />-->
-<!--					<parameter name="confirmPasswordData" value="Password1@" />-->
-<!--					<parameter name="emailData" value="Ab.c1313@gmail.com" />-->
+					<include name="UserRegistration" />
+					<include name="EappLogin" />
+					<exclude name="EappHomePage" />
+					<exclude name="EappAboutPage" />
+					<include name="EappEmployeeList" />
+					<include name="DoTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="EdgeTest">
+		<parameter name="browser" value="edge" />
+		<classes>
+			<class name="MavenProjectGroup.MavenProject.AppTest">
+				<methods>
+					<parameter name="userNameData" value="Ee.c1313" />
+					<parameter name="passwordData" value="Password1@" />
+					<parameter name="confirmPasswordData" value="Password1@" />
+					<parameter name="emailData" value="Ee.c1313@gmail.com" />
 
-<!--					<include name="UserRegistration" />-->
-<!--					<exclude name="EappLogin" />-->
-<!--					<include name="EappHomePage" />-->
-<!--					<exclude name="EappAboutPage" />-->
-<!--					<include name="EappEmployeeList" />-->
-<!--					<include name="DoTest" />-->
-<!--				</methods>-->
-<!--			</class>-->
-<!--		</classes>-->
-<!--	</test>-->
+					<include name="UserRegistration" />
+					<exclude name="EappLogin" />
+					<include name="EappHomePage" />
+					<exclude name="EappAboutPage" />
+					<include name="EappEmployeeList" />
+					<include name="DoTest" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 </suite> <!--
 EappSuite -->
