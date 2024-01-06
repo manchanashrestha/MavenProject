@@ -6,10 +6,10 @@
 		<classes>
 			<class name="MavenProjectGroup.MavenProject.AppTest">
 				<methods>
-					<parameter name="userNameData" value="Ch.c1411" />
+					<parameter name="userNameData" value="Ch.ch411" />
 					<parameter name="passwordData" value="Password1@" />
 					<parameter name="confirmPasswordData" value="Password1@" />
-					<parameter name="emailData" value="Ch.c1411@gmail.com" />
+					<parameter name="emailData" value="Ch.ch411@gmail.com" />
 
 					<include name="UserRegistration" />
 					<include name="EappLogin" />
@@ -26,10 +26,10 @@
 		<classes>
 			<class name="MavenProjectGroup.MavenProject.AppTest">
 				<methods>
-					<parameter name="userNameData" value="Ff.c1212" />
+					<parameter name="userNameData" value="Ff.f1212" />
 					<parameter name="passwordData" value="Password1@" />
 					<parameter name="confirmPasswordData" value="Password1@" />
-					<parameter name="emailData" value="Ff.c1212@gmail.com" />
+					<parameter name="emailData" value="Ff.f1212@gmail.com" />
 
 					<include name="UserRegistration" />
 					<include name="EappLogin" />
@@ -46,10 +46,10 @@
 		<classes>
 			<class name="MavenProjectGroup.MavenProject.AppTest">
 				<methods>
-					<parameter name="userNameData" value="Ee.c1313" />
+					<parameter name="userNameData" value="Ee.e1313" />
 					<parameter name="passwordData" value="Password1@" />
 					<parameter name="confirmPasswordData" value="Password1@" />
-					<parameter name="emailData" value="Ee.c1313@gmail.com" />
+					<parameter name="emailData" value="Ee.e1313@gmail.com" />
 
 					<include name="UserRegistration" />
 					<exclude name="EappLogin" />

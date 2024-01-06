@@ -37,29 +37,19 @@ public class AppTest {
 	@Parameters({ "browser" })
 	@BeforeTest
 	public void SetUp(String browser) throws MalformedURLException, InterruptedException {
-//		if (browser.equalsIgnoreCase("chrome")) {
-//			driver = new ChromeDriver();
-//		} else if (browser.equalsIgnoreCase("firefox")) {
-//			driver = new FirefoxDriver();
-//		} else if (browser.equalsIgnoreCase("edge")) {
-//			driver = new EdgeDriver();
-//		}
-//		System.out.println("Test is running in " + browser + "browser");
-//		Reporter.log("Test is running in " + browser + "browser");
-//
-//		driver.manage().window().maximize();
-//		driver.get("http://eaapp.somee.com/");
-
+		
 		DesiredCapabilities dc = new DesiredCapabilities();
-		/*
-		 * if (browser.equalsIgnoreCase("chrome")) { dc.setBrowserName("chrome"); } else
-		 * if (browser.equalsIgnoreCase("firefox")) { dc.setBrowserName("firefox"); }
-		 * else if (browser.equalsIgnoreCase("edge")) {
-		 * dc.setBrowserName("MicrosoftEdge"); }
-		 */
-		dc.setBrowserName("firefox");
-		System.out.println("Test is running in " + browser + "browser");
-		Reporter.log("Test is running in " + browser + "browser");
+
+		if (browser.equalsIgnoreCase("chrome")) {
+			System.out.println("Test is running in " + dc.getCapabilityNames() + browser + " if block chrome browser");
+			dc.setBrowserName("chrome");
+		} else if (browser.equalsIgnoreCase("firefox")) {
+			System.out.println("Test is running in " + dc.getCapabilityNames() + browser + " if block firefox browser");
+			dc.setBrowserName("firefox");
+		} else if (browser.equalsIgnoreCase("edge")) {
+			System.out.println("Test is running in " + dc.getCapabilityNames() + browser + " if block edge browser");
+			dc.setBrowserName("MicrosoftEdge");
+		}
 
 		driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), dc);
 		Thread.sleep(100);
